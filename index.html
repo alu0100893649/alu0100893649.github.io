@@ -2,24 +2,118 @@
 <html>
 <head>
 
-    <title>Portfolio - Sebastián J. D. R.</title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio - Sebastián J. D. R.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    <style></style>
+  <style>
+    
+  </style>
     
 </head>
 <body>
+  
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                       
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-center">
+        <li><a href="#myPage">INICIO</a></li>
+        <li><a href="#intro">INTRO</a></li>
+        <li><a href="#PL">PROCESADORES DE LENGUAJES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+  
+  <div id="myPage" class="jumbotron text-center">
+    <h1>Sebastián Díaz</h1>
+    <h2>Alumno de la ULL</h2>
+    <p>Portfolio de prácticas y proyectos personales</p>
+  </div>
+  
+  <div id="intro" class="container-fluid bg-deep">
+  <div class="row">
+    <div class="col-sm-10">
+      <h2>Introducción</h2><br>
+      <h4>Esta página web contendrá las prácticas realizadas en Procesadores de Lenguajes, así como otros proyectos personales relacionados con la universidad</h4><br>
+    </div>
+  </div>
+  </div>
+  
+  <div id="PL" class="container-fluid bg-nodeep">
+  <div class="row">
+    <div class="col-sm-10">
+      <h2>Prácticas - Procesadores de Lenguajes</h2><br>
+      <h4><strong>PRÁCTICA 1:</strong> <a href="#">Tareas Iniciales</a></h4><br>
+    </div>
+  </div>
+  </div>
+  
+  <div id="portfolio" class="container-fluid bg-deep">
+  <div class="row">
+    <div class="col-sm-10">
+      <h2>Portfolio</h2>
+      <h4>Secretario y cofundador de la asociación lúdica de estudiantes <strong>Ingenieros y Mazmorras</strong></h4>
+    </div>
+  </div>
+  </div>
+  
+  <footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  </footer>
 
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>MODIFICAR PARA PÁGINA DE PRÁCTICAS</p>
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links in navbar + footer link
+    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+     
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+    
+    $(window).scroll(function() {
+      $(".slideanim").each(function(){
+        var pos = $(this).offset().top;
+  
+        var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+      });
+    });
+  })
+  </script>
 
 </body>
 </html>
